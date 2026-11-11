@@ -1,0 +1,5 @@
+---
+type: my-document
+---
+
+# {{title}}

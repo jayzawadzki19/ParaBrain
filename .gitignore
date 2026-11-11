@@ -1,0 +1,6 @@
+.dev/
+.DS_Store
+.github/checks/node_modules/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
