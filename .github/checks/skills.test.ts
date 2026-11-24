@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import { ROOT, exists, headings, isSymlink, listDir, parseFrontmatter, readText } from './lib/vault.ts';
 
 // Each skill task appends its name here.
-const EXPECTED_SKILLS = ['process-inbox', 'review-journal', 'manage-project', 'ask-brain', 'check-health', 'start-journey'];
+const EXPECTED_SKILLS = ['process-inbox', 'review-journal', 'manage-project', 'ask-brain', 'check-health', 'start-journey', 'capture-to-inbox'];
 
 test('.claude/skills is a symlink to ../.agents/skills', () => {
   ok(exists('.claude/skills'), '.claude/skills is missing or dangling');

@@ -56,6 +56,7 @@ questions.md                running list of knowledge gaps
 ## Who writes what
 
 - The owner writes `1-Journal/Daily/` and `2-Inbox/`. You read them; you never edit their content.
+- An agent may write a new file into `2-Inbox/` when the owner asks for it with the global `capture-to-inbox` skill. It counts as the owner's capture. No agent edits an existing Inbox file.
 - The owner also writes their own documents (articles, essays, views on a topic). A page with `type: my-document` is one. So is any other Markdown page in `3-Projects/`, `4-Areas/`, `5-Resources/` or `6-Archive/` that has none of your page types (`project`, `area`, `concept`, `entity`, `summary`), except a project's `Decisions.md` and `Log.md`: a document with no frontmatter is safe. Never edit its content or move it on its own; it moves unedited only with its whole project or area folder when that folder is archived. Add no link to it for the sake of a return link (rule 7 exempts it). Process it only when the owner asks (`process-inbox`), and list it in `index.md` under "My documents" when you do; it is a source of the owner's views, not of facts. Do not cite or link it otherwise.
 - You write everything else: wiki pages, `1-Journal/Weekly/`, `1-Journal/Monthly/`, `index.md`, `log.md`, `questions.md`, `8-System/about.md` (from what the owner tells you).
 - You write URL source cards in `7-Raw/sources/`, move other source files there and move daily notes into `1-Journal/Daily/YYYY/MM/`, and archive whole project or area folders as described above. Never edit, rename or delete a source file there afterwards: wiki pages cite these files, and the citations break if they change.
@@ -167,6 +168,7 @@ Skills live in `.agents/skills/`, one folder per skill, each with a `SKILL.md`. 
 - `manage-project`: start, update or archive a project.
 - `ask-brain`: answer questions using the vault.
 - `check-health`: audit the vault and report ranked findings.
+- `capture-to-inbox`: write a conversation, note or artifact from any project into `2-Inbox/`; linked globally from `~/.agents/skills` and `~/.claude/skills` so it works outside the vault.
 
 ## Limits
 

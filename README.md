@@ -32,6 +32,7 @@ URL clips become immutable source cards with short excerpts; clips without a URL
 - Start with `start-journey`: "Set up my vault." It records your profile, including writing style and grammatical gender preferences, in `8-System/about.md`.
 - Capture in a daily note or put an article in `2-Inbox/`. The daily template offers optional reflection prompts you can fill in or delete. Ask `process-inbox`: "Process this article" or "Process my document about training."
 - Each week, ask `review-journal`: "Review my week." It can also review a closed day or summarise a month.
+- From another project or chat, ask `capture-to-inbox`: "Save this conversation to my second brain." It writes one new file into `2-Inbox/` for `process-inbox` to handle later. It needs the optional setup step below.
 - Ask `ask-brain` at any time: "What have I learned about training?"
 - Use `manage-project`: "Start a newsletter project" or "Archive this finished project."
 - Each month, ask `check-health`: "Check the health of my vault." It reports findings; repairs need a separate request and approval.
@@ -41,6 +42,15 @@ URL clips become immutable source cards with short excerpts; clips without a URL
 1. On GitHub, choose **Use this template** to create a private repository, then clone it to your computer.
 2. Open the cloned folder as an Obsidian vault.
 3. Run Claude Code or Codex in that folder and ask it to run `start-journey`.
+4. Optional, to capture from other projects with `capture-to-inbox`: in `.agents/skills/capture-to-inbox/SKILL.md`, replace `<VAULT_PATH>` with the absolute path of your vault, then link the skill globally from the vault folder:
+
+   ```bash
+   mkdir -p ~/.agents/skills ~/.claude/skills
+   ln -s "$PWD/.agents/skills/capture-to-inbox" ~/.agents/skills/capture-to-inbox  # Codex
+   ln -s "$PWD/.agents/skills/capture-to-inbox" ~/.claude/skills/capture-to-inbox  # Claude Code
+   ```
+
+   Link the skill folder, not the whole `~/.claude/skills`: the app keeps its own folders there.
 
 ## Setup: other devices
 
@@ -57,7 +67,7 @@ URL clips become immutable source cards with short excerpts; clips without a URL
 
 ## Updating
 
-Updates are manual. Add the public template as an `upstream` Git remote, fetch it, and deliberately review and bring over changes to `.agents/`, `8-System/templates/`, `AGENTS.md`, `CLAUDE.md`, `.claude/settings.json` and `.obsidian/`. Never take content folders, `index.md`, `log.md`, `questions.md`, `8-System/about.md` or `README.md` from upstream.
+Updates are manual. Add the public template as an `upstream` Git remote, fetch it, and deliberately review and bring over changes to `.agents/`, `8-System/templates/`, `AGENTS.md`, `CLAUDE.md`, `.claude/settings.json` and `.obsidian/`. Keep your vault path in `.agents/skills/capture-to-inbox/SKILL.md` when you bring over its changes. Never take content folders, `index.md`, `log.md`, `questions.md`, `8-System/about.md` or `README.md` from upstream.
 
 ## Credits
 
